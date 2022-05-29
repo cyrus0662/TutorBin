@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "93e61e2e-3cd1-4fb3-99aa-49b832e8f984",
+		"name": "TutorBin_Ass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create detail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwY2E1MmU0Ny00MzVlLTRmMmMtOTg1MS0zMzMwNjgyOTE2YWIiLCJuYW1lIjoic2FtcGxlIHVzZXIiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjUzODQyMTEzLCJleHAiOjE2NTM4NDM5MTN9.fOfL0nyo2Z_rLjLJt-7YyWA9igot7r1siZe-BbryL7U",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"a todo app\",\r\n    \"details\": \"jl dummy test\",\r\n    \"dueDate\": \"2022-05-29T00:00:00.000Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/v1/todo/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"sample user\",\n  \"email\": \"test@gmail.com\",\n  \"phoneNumber\": 8965327410,\n  \"password\": \"hello123\"\n}"
+				},
+				"url": "localhost:8080/api/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"test@gmail.com\",\n    \"password\": \"hello123\"\n}"
+				},
+				"url": "http://localhost:8080/api/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "updateDetailById",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwY2E1MmU0Ny00MzVlLTRmMmMtOTg1MS0zMzMwNjgyOTE2YWIiLCJuYW1lIjoic2FtcGxlIHVzZXIiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjUzODQyNjMxLCJleHAiOjE2NTM4NDQ0MzF9.7LLwX4IZ8w2UGx1MDzg4zCk6zThNyg410MnjlTEbet4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"details\": \"sample details updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/todo/update/f11b60f1-57f9-423e-8be7-362e87cb18c4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"todo",
+						"update",
+						"f11b60f1-57f9-423e-8be7-362e87cb18c4"
+					],
+					"query": [
+						{
+							"key": "todoId",
+							"value": "f11b60f1-57f9-423e-8be7-362e87cb18c4",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwY2E1MmU0Ny00MzVlLTRmMmMtOTg1MS0zMzMwNjgyOTE2YWIiLCJuYW1lIjoic2FtcGxlIHVzZXIiLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjUzODQyNjMxLCJleHAiOjE2NTM4NDQ0MzF9.7LLwX4IZ8w2UGx1MDzg4zCk6zThNyg410MnjlTEbet4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/todo/details?todoId=f11b60f1-57f9-423e-8be7-362e87cb18c4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"todo",
+						"details"
+					],
+					"query": [
+						{
+							"key": "todoId",
+							"value": "f11b60f1-57f9-423e-8be7-362e87cb18c4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
