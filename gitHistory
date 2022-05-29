@@ -1,0 +1,17 @@
+cd TutorBin_Ass/TutorBin/
+    git config user.name "cyrus0662"
+    git config user.email "pguptapranjal@gmail.com"
+    git branch
+    git checkout -b pran_dev
+    git status
+    git branch
+    git status
+    git add gitignore
+    git commit -m "gitignore added"
+    git push
+    git status
+    git diff
+    git add .
+    git commit -m "todo details added"
+    git push
+    history
