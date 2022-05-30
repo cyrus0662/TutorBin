@@ -37,7 +37,7 @@ app.use((req, res, next) => {
     const error = new Error("URL Not Found");
     error.status = 404
     next(error);
-})
+});
 
 // Handle Error thrown by API
 app.use((error, req, res, next) => {
@@ -47,10 +47,8 @@ app.use((error, req, res, next) => {
             message: error.message
         }
     })
-})
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`)
-})
-
-module.exports = routes;
+});
